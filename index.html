@@ -26,7 +26,6 @@
         .app-container { max-width: 480px; margin: 0 auto; background-color: #fafaf9; min-height: 100vh; position: relative; padding-bottom: 80px;}
         .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-top: 1px solid rgba(0,0,0,0.05); }
         .badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="text-stone-900 antialiased">
@@ -109,9 +108,9 @@
         info: {
             leader: { name: "汪雅儒 小姐", tel: "0905-053-319", jp: "+81 08066805535" },
             hotels: [
-                { name: "淺草橋 Route-Inn Grand", tel: "81-3-5835-1777" },
-                { name: "富士五湖 Premium Resort", tel: "81-555-73-1168" },
-                { name: "上野光芒飯店 (Candeo)", tel: "81-3-5808-6100" }
+                { name: "淺草橋 Route-Inn Grand", tel: "81-3-5835-1777", addr: "〒111-0053 東京都台東区浅草橋二丁目29番14號" },
+                { name: "富士五湖 Premium Resort", tel: "81-555-73-1168", addr: "〒401-0302 山梨縣南都留郡富士河口湖町小立7139-1" },
+                { name: "上野光芒飯店 (Candeo Hotels)", tel: "81-3-5808-6100", addr: "〒110-0003 東京都台東區根岸1丁目2番13號" }
             ],
             flight: "去：BR198 (08:50) | 回：BR197 (14:00)"
         },
@@ -122,7 +121,7 @@
                 { title: "雪地安全", val: "行走結冰路面請步幅小、腳掌貼地。避免穿平底牛仔褲。" },
                 { title: "飲水/溫泉", val: "冷水可生飲。泡湯需全裸入浴，紋身者不可進大浴場。" }
             ],
-            notes: ["迪士尼門票 14 天前確認樂園", "酒酒井 Outlet 採買", "隨身攜帶護照正本以利免稅", "台股開盤檢查(誤)"]
+            notes: ["迪士尼門票 14 天前確認樂園", "酒酒井 Outlet 採買", "隨身攜帶護照正本以利免稅", "台股開盤檢查XD"]
         }
     };
 
@@ -137,86 +136,4 @@
         const container = document.getElementById('main-content');
         container.innerHTML = tripData.days.map(day => `
             <div class="bg-white rounded-xl shadow-sm border border-stone-200 overflow-hidden mb-6">
-                <div class="bg-jp-stone px-4 py-2 border-b flex justify-between items-center">
-                    <h2 class="font-bold text-jp-blue"><i class="far fa-calendar-check mr-2"></i>${day.date}</h2>
-                    <span class="text-[10px] bg-white border px-2 py-0.5 rounded shadow-sm">${day.weather}</span>
-                </div>
-                <div class="p-2">
-                    ${day.events.map(e => `
-                        <div class="relative pl-6 py-3 border-l border-stone-200 ml-4 ${e.highlight ? 'bg-amber-50 rounded-r-lg' : ''}">
-                            <div class="absolute -left-1.5 top-5 w-3 h-3 rounded-full bg-white border-2 border-jp-blue shadow-sm"></div>
-                            <div class="flex justify-between items-start">
-                                <div class="flex-1 text-sm">
-                                    <span class="text-[10px] text-stone-400 font-mono">${e.time}</span>
-                                    <h3 class="font-bold block">${e.title} ${e.badge ? `<span class="badge bg-blue-100 text-blue-600 ml-1">${e.badge}</span>` : ''}</h3>
-                                    <p class="text-[11px] text-stone-500 mt-1 leading-relaxed">${e.desc}</p>
-                                </div>
-                                <a href="https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3DDiverCity%2BTokyo%2BPlaza{encodeURIComponent(e.nav)}" target="_blank" class="ml-2 p-2 text-jp-blue bg-blue-50 rounded-full active:scale-95 transition-transform"><i class="fas fa-location-arrow text-sm"></i></a>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
-        `).join('');
-    }
-
-    function renderInfo() {
-        updateNav(1);
-        const container = document.getElementById('main-content');
-        container.innerHTML = `
-            <div class="space-y-6">
-                <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue"><i class="fas fa-plane-departure mr-2"></i>航班與人員</h3>
-                    <div class="space-y-4">
-                        <div class="text-xs text-stone-500">領隊: <span class="text-blue-700 font-bold">${tripData.info.leader.name}</span></div>
-                        <div class="text-xs">國內聯繫: <a href="tel:${tripData.info.leader.tel}" class="text-blue-600">${tripData.info.leader.tel}</a></div>
-                        <div class="text-xs">日本聯繫: <a href="tel:${tripData.info.leader.jp}" class="text-blue-600">${tripData.info.leader.jp}</a></div>
-                        <div class="pt-2 mt-2 border-t text-xs font-mono">${tripData.info.flight}</div>
-                    </div>
-                </div>
-                <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue"><i class="fas fa-hotel mr-2"></i>飯店列表</h3>
-                    <div class="space-y-3">
-                        ${tripData.info.hotels.map(h => `
-                            <div class="flex justify-between items-center text-xs py-1">
-                                <span class="font-medium">${h.name}</span>
-                                <a href="tel:${h.tel}" class="text-blue-600 font-mono underline">${h.tel}</a>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            </div>`;
-    }
-
-    function renderGuide() {
-        updateNav(2);
-        const container = document.getElementById('main-content');
-        container.innerHTML = `
-            <div class="space-y-6">
-                <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue"><i class="fas fa-lightbulb mr-2"></i>旅行必讀攻略</h3>
-                    <div class="space-y-4">
-                        ${tripData.guide.essentials.map(t => `
-                            <div>
-                                <div class="text-xs font-bold text-stone-700 underline decoration-jp-accent decoration-2 underline-offset-4">${t.title}</div>
-                                <div class="text-xs text-stone-500 mt-2 leading-relaxed">${t.val}</div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-                <div class="bg-jp-blue p-5 rounded-xl shadow-lg text-white">
-                    <h3 class="font-bold mb-3"><i class="fas fa-edit mr-2"></i>備忘錄 / 買買清單</h3>
-                    <div class="space-y-2 text-[11px] opacity-90">
-                        ${tripData.guide.notes.map(n => `<div>□ ${n}</div>`).join('')}
-                    </div>
-                    <div class="mt-4 pt-4 border-t border-white/20 text-center">
-                        <p class="text-[9px] opacity-60">Enjoy your Tokyo Snow Trip!</p>
-                    </div>
-                </div>
-            </div>`;
-    }
-
-    document.addEventListener('DOMContentLoaded', renderItinerary);
-</script>
-</body>
-</html>
+                <div class="bg-jp-stone px-4 py-2 border
