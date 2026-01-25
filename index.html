@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>東京戲雪趣 2026</title>
+    <title>❄️ 修全、依芬與小沛恩的大冒險 ❄️</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -33,13 +33,17 @@
 
 <div class="app-container" id="app">
     <header class="sticky top-0 z-50 bg-jp-stone/95 backdrop-blur shadow-sm px-4 py-3 flex justify-between items-center border-b border-stone-200">
-        <div>
-            <h1 class="text-lg font-bold tracking-widest text-jp-blue">東京戲雪趣</h1>
-            <p class="text-[10px] text-stone-500 font-medium tracking-tighter">2026.02.10 - 02.14 | 5 DAYS</p>
+        <div class="flex-1">
+            <h1 class="text-md font-bold tracking-tight text-jp-blue leading-tight">
+                ❄️ 修全、依芬與小沛恩的大冒險 ✈️
+            </h1>
+            <p class="text-[10px] text-stone-500 font-medium tracking-tighter mt-0.5">
+                👨‍👩‍👦 2026.02.10 - 02.14 | 東京戲雪趣
+            </p>
         </div>
-        <div class="text-right">
-            <div class="text-[10px] font-medium bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
-                <i class="fas fa-suitcase-rolling mr-1"></i> <span>長榮 23kg 託運</span>
+        <div class="text-right ml-2">
+            <div class="text-[10px] font-medium bg-blue-100 text-blue-800 px-2 py-1 rounded-full whitespace-nowrap">
+                <i class="fas fa-suitcase-rolling mr-1"></i> <span>23kg 託運</span>
             </div>
         </div>
     </header>
@@ -49,16 +53,16 @@
     <nav class="fixed bottom-0 left-0 right-0 z-50 glass-nav max-w-[480px] mx-auto pb-safe shadow-lg">
         <div class="flex justify-around items-center h-16">
             <button onclick="renderItinerary()" class="nav-btn flex flex-col items-center justify-center w-1/4 h-full text-jp-blue font-bold">
-                <i class="fas fa-calendar-day text-lg mb-1"></i><span class="text-[9px]">行程</span>
+                <i class="fas fa-map-location-dot text-lg mb-1"></i><span class="text-[9px]">冒險日程</span>
             </button>
             <button onclick="renderInfo()" class="nav-btn flex flex-col items-center justify-center w-1/4 h-full text-gray-400">
-                <i class="fas fa-passport text-lg mb-1"></i><span class="text-[9px]">資訊</span>
+                <i class="fas fa-passport text-lg mb-1"></i><span class="text-[9px]">行前資訊</span>
             </button>
             <button onclick="renderGuide()" class="nav-btn flex flex-col items-center justify-center w-1/4 h-full text-gray-400">
-                <i class="fas fa-lightbulb text-lg mb-1"></i><span class="text-[9px]">攻略</span>
+                <i class="fas fa-star text-lg mb-1"></i><span class="text-[9px]">大師攻略</span>
             </button>
             <button onclick="renderLuggage()" class="nav-btn flex flex-col items-center justify-center w-1/4 h-full text-gray-400">
-                <i class="fas fa-list-check text-lg mb-1"></i><span class="text-[9px]">行李</span>
+                <i class="fas fa-clipboard-check text-lg mb-1"></i><span class="text-[9px]">裝備清單</span>
             </button>
         </div>
     </nav>
@@ -70,68 +74,68 @@
             {
                 date: "02/10 (二)", loc: "桃園 ➔ 東京", weather: "晴 4°C",
                 events: [
-                    { time: "06:20", type: "flight", title: "桃園機場集合", desc: "第二航廈 長榮航空 20 號櫃台。", nav: "桃園機場第二航廈" },
-                    { time: "08:50", type: "flight", title: "長榮航空 BR198", desc: "起飛前往東京成田機場。預計 12:55 抵達。", nav: "成田國際機場" },
-                    { time: "15:00", type: "spot", title: "明治神宮", desc: "東京都心的綠洲。必看：巨型鳥居與神宮正殿。", nav: "明治神宮" },
-                    { time: "18:00", type: "food", title: "三大蟹 & 和牛壽喜燒", desc: "升級版晚餐：螃蟹與和牛吃到飽 (餐標 8800 日幣)。", nav: "淺草橋", highlight: true }
+                    { time: "06:20", type: "flight", title: "機場集合：開始大冒險！", desc: "第二航廈 長榮航空 20 號櫃台。", nav: "桃園機場第二航廈" },
+                    { time: "08:50", type: "flight", title: "飛向東京 (BR198)", desc: "12:55 抵達成田，準備感受雪國氣息。", nav: "成田國際機場" },
+                    { time: "15:00", type: "spot", title: "明治神宮參拜", desc: "漫步都會森林，欣賞巨大鳥居。", nav: "明治神宮" },
+                    { time: "18:00", type: "food", title: "🦀 三大蟹 & 和牛盛宴", desc: "首晚大餐：螃蟹與和牛壽喜燒吃到飽！", nav: "淺草橋", highlight: true }
                 ]
             },
             {
                 date: "02/11 (三)", loc: "鎌倉 ➔ 河口湖", weather: "雪 2°C",
                 events: [
-                    { time: "09:30", type: "spot", title: "鶴岡八幡宮", desc: "鎌倉的精神象徵。建議順訪旁邊的小町通古街。", nav: "鶴岡八幡宮" },
-                    { time: "11:30", type: "shop", title: "鎌倉小町通", desc: "必買：日式手作小物、特色點心。感受古都風情。", nav: "鎌倉小町通り" },
-                    { time: "14:30", type: "spot", title: "冬季限定戲雪趣", desc: "雪盆體驗、打雪仗。請準備好手套與保暖衣物。", nav: "富士五湖", badge: "期間限定" },
-                    { time: "18:00", type: "hotel", title: "富士溫泉飯店入住", desc: "入住 Fuji Premium Resort，享受飯店自助餐與溫泉。", nav: "Fuji Premium Resort" }
+                    { time: "09:30", type: "spot", title: "鶴岡八幡宮", desc: "鎌倉古都巡禮，感受武士精神。", nav: "鶴岡八幡宮" },
+                    { time: "11:30", type: "shop", title: "小町通散策", desc: "尋找特色手作與在地點心。", nav: "鎌倉小町通り" },
+                    { time: "14:30", type: "spot", title: "⛄ 冬季戲雪趣", desc: "全家一起玩雪盆、打雪仗！", nav: "富士五湖", badge: "期間限定" },
+                    { time: "18:00", type: "hotel", title: "入住富士溫泉飯店", desc: "Fuji Premium Resort 享受溫泉與美食。", nav: "Fuji Premium Resort" }
                 ]
             },
             {
                 date: "02/12 (四)", loc: "山梨 ➔ 台場", weather: "晴 -1°C",
                 events: [
-                    { time: "09:00", type: "spot", title: "河口湖大石公園", desc: "拍攝富士山絕景名所。隨季節有不同花卉美景。", nav: "河口湖大石公園" },
-                    { time: "11:00", type: "spot", title: "忍野八海", desc: "國家天然紀念物。必吃：贈送的銘水豆腐或香烤草餅。", nav: "忍野八海", badge: "名水百選" },
-                    { time: "15:30", type: "spot", title: "台場 DiverCity", desc: "朝聖實物大小鋼彈。免稅店採買。本日晚餐為燒肉吃到飽。", nav: "DiverCity Tokyo Plaza" },
-                    { time: "20:00", type: "hotel", title: "上野光芒飯店入住", desc: "連住兩晚。近上野公園，交通購物極佳。", nav: "Candeo Hotels Uenokoen" }
+                    { time: "09:00", type: "spot", title: "河口湖大石公園", desc: "捕捉壯麗的富士山倒影。", nav: "河口湖大石公園" },
+                    { time: "11:00", type: "spot", title: "忍野八海", desc: "探訪清澈湧泉，品嚐名物豆腐。", nav: "忍野八海", badge: "名水百選" },
+                    { time: "15:30", type: "spot", title: "🤖 台場 1:1 鋼彈", desc: "朝聖獨角獸鋼彈立像，百貨採買。", nav: "DiverCity Tokyo Plaza" },
+                    { time: "20:00", type: "hotel", title: "上野光芒飯店", desc: "入住連住兩晚的質感飯店。", nav: "Candeo Hotels Uenokoen" }
                 ]
             },
             {
                 date: "02/13 (五)", loc: "東京迪士尼", weather: "陰 5°C",
                 events: [
-                    { time: "08:30", type: "spot", title: "東京迪士尼全日", desc: "樂園或海洋二擇一。建議善用官方 APP 領取預約券。", nav: "東京迪士尼樂園", badge: "一日暢遊" },
-                    { time: "20:00", type: "transport", title: "搭乘電車返抵", desc: "今日往返樂園均搭乘電車，請預留體力擠車。", nav: "Candeo Hotels Uenokoen" }
+                    { time: "08:30", type: "spot", title: "🏰 迪士尼奇幻全日", desc: "冒險的高潮！全家盡情暢遊夢幻國度。", nav: "東京迪士尼樂園", badge: "一日暢遊" },
+                    { time: "20:00", type: "transport", title: "返程休息", desc: "擠電車回上野，小沛恩辛苦了！", nav: "Candeo Hotels Uenokoen" }
                 ]
             },
             {
                 date: "02/14 (六)", loc: "成田 ➔ 桃園", weather: "多雲 7°C",
                 events: [
-                    { time: "10:00", type: "shop", title: "酒酒井 OUTLET", desc: "最後衝刺！匯集 200 間品牌。離機場僅 10 分鐘。", nav: "酒々井プレミアム・アウトレット", badge: "必逛" },
-                    { time: "14:00", type: "flight", title: "長榮航空 BR197", desc: "整理行李前往機場。預計 17:05 返抵桃園。", nav: "成田國際機場" }
+                    { time: "10:00", type: "shop", title: "🛍️ 酒酒井 OUTLET", desc: "最後衝刺採購！品牌補貨好時機。", nav: "酒々井プレミアム・アウトレット", badge: "必逛" },
+                    { time: "14:00", type: "flight", title: "帶著回憶回家", desc: "搭乘 BR197 返台，預計 17:05 抵達。", nav: "成田國際機場" }
                 ]
             }
         ],
         info: {
             leader: { name: "汪雅儒 小姐", tel: "0905-053-319", jp: "+81 08066805535" },
             hotels: [
-                { name: "淺草橋 Hotel Route-inn Grand Tokyo-Asakusabashi", tel: "81-3-5835-1777", addr: "〒111-0053 東京都台東区浅草橋二丁目29番14號" },
+                { name: "淺草橋 Hotel Route-inn Grand", tel: "81-3-5835-1777", addr: "〒111-0053 東京都台東区浅草橋二丁目29番14號" },
                 { name: "富士五湖 Fuji Premium Resort", tel: "81-555-73-1168", addr: "〒401-0302 山梨縣南都留郡富士河口湖町小立7139-1" },
-                { name: "上野光芒飯店 Candeo Hotels Ueno Koen", tel: "81-3-5808-6100", addr: "〒110-0003 東京都台東區根岸1丁目2番13號" }
+                { name: "上野光芒飯店 Candeo Hotels", tel: "81-3-5808-6100", addr: "〒110-0003 東京都台東區根岸1丁目2番13號" }
             ],
-            flight: "去：BR198 (08:50) | 回：BR197 (14:00)"
+            flight: "✈️ 去：BR198 (08:50) | 回：BR197 (14:00)"
         },
         guide: {
             essentials: [
-                { title: "洋蔥式穿法", val: "室內暖氣強勁，外著厚重防風大衣，內搭薄長袖為宜。" },
-                { title: "導遊小費", val: "每人每日 NT$ 300，五日合計 NT$ 1500。" },
-                { title: "雪地安全", val: "行走結冰路面請步幅小、腳掌貼地。避免穿平底牛仔褲。" },
-                { title: "飲水/溫泉", val: "冷水可生飲。泡湯需全裸入浴，紋身者不可進大浴場。" },
-                { title: "早上十點", val: "台股開盤，我會看一下。海外中年股神，失敗就流亡海外...." }
+                { title: "🧥 洋蔥式穿法", val: "室內暖氣強勁，建議外層防風厚外套，內層好穿脫。" },
+                { title: "🧧 導遊小費", val: "每人每日 NT$ 300，五日共計 NT$ 1500。" },
+                { title: "🎿 雪地安全", val: "路面結冰時請小碎步，雙手不插口袋。" },
+                { title: "♨️ 飲水/溫泉", val: "冷水可生飲。泡湯需全裸，紋身者需留意。" },
+                { title: "📈 十點看台股", val: "中年股神小明最後掙扎，失敗就流放海外。(大誤)" }
             ]
         },
         luggage: [
-            { category: "重要文件", items: ["護照正本 (免稅使用)", "手機 (Disney APP)", "處方藥/醫生證明", "保險投保證明","小孩的AirTag"] },
-            { category: "衣物配備", items: ["保暖棉衣 (內穿)", "厚防寒外套/羽絨衣", "防水靴/雪鞋", "防水手套/毛帽/圍巾", "太陽眼鏡 (雪地防眩光)"] },
-            { category: "電器與隨身", items: ["行動電源 (限隨身/低於100Wh)", "日元現金/信用卡", "雨具 (日本易雨)", "保濕乳液/護唇膏"] },
-            { category: "洗漱用品", items: ["牙刷/牙膏 (環保建議。我只帶牙膏)", "刮鬍刀", "個人常用藥品", "拖鞋 (環保建議。飯店通常有，我不帶~)"] }
+            { category: "重要裝備", items: ["護照正本 (免稅必備)", "手機 (含 Disney App)", "處方藥/醫生證明", "保險單據","小沛恩的 AirTag"] },
+            { category: "禦寒配備", items: ["保暖內衣", "羽絨/厚大衣", "防水雪鞋/靴", "手套/毛帽/圍巾", "太陽眼鏡 (防雪盲)"] },
+            { category: "隨身物品", items: ["行動電源 (限隨身攜帶)", "日圓現金/信用卡", "折傘/雨具", "保濕乳液/護唇膏"] },
+            { category: "雜物", items: ["牙刷/個人牙膏", "刮鬍刀", "個人常用藥"] }
         ]
     };
 
@@ -160,7 +164,7 @@
                                     <h3 class="font-bold block">${e.title}</h3>
                                     <p class="text-[11px] text-stone-500 mt-1">${e.desc}</p>
                                 </div>
-                                <a href="https://www.google.com/maps/search/?api=1&query=Komachi-dori+Street0{encodeURIComponent(e.nav)}" target="_blank" class="ml-2 p-2 text-jp-blue bg-blue-50 rounded-full"><i class="fas fa-location-arrow text-sm"></i></a>
+                                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(e.nav)}" target="_blank" class="ml-2 p-2 text-jp-blue bg-blue-50 rounded-full"><i class="fas fa-location-arrow text-sm"></i></a>
                             </div>
                         </div>
                     `).join('')}
@@ -175,15 +179,15 @@
         container.innerHTML = `
             <div class="space-y-6 text-xs">
                 <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue">聯繫資訊</h3>
+                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue">冒險支援連繫</h3>
                     <div class="space-y-3">
                         <div>領隊: <span class="text-blue-700 font-bold">${tripData.info.leader.name}</span></div>
-                        <div>國外聯絡: <a href="tel:${tripData.info.leader.jp}" class="text-blue-600 underline">${tripData.info.leader.jp}</a></div>
+                        <div>國內外專線: <a href="tel:${tripData.info.leader.jp}" class="text-blue-600 underline">${tripData.info.leader.jp}</a></div>
                         <div class="pt-2 border-t font-mono">${tripData.info.flight}</div>
                     </div>
                 </div>
                 <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue">飯店列表</h3>
+                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue">冒險據點 (飯店)</h3>
                     <div class="space-y-4">
                         ${tripData.info.hotels.map(h => `
                             <div>
@@ -203,7 +207,7 @@
         container.innerHTML = `
             <div class="space-y-4">
                 <div class="bg-white p-5 rounded-xl shadow-sm border border-stone-200">
-                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue">重要攻略</h3>
+                    <h3 class="font-bold border-b pb-2 mb-4 text-jp-blue">冒險必勝攻略</h3>
                     ${tripData.guide.essentials.map(t => `
                         <div class="mb-4">
                             <div class="text-[11px] font-bold text-stone-700 underline decoration-jp-accent decoration-2 underline-offset-4">${t.title}</div>
@@ -233,8 +237,7 @@
                     </div>
                 `).join('')}
                 <div class="p-4 text-[10px] text-stone-400 text-center leading-relaxed">
-                    * 行李託運限制 23kg 以內。尖銳物品須託運。<br>
-                    * 行動電源/鋰電池禁止託運，須隨身攜帶。
+                    🎌 祝大家冒險順利，收穫滿滿回憶！ 🎌
                 </div>
             </div>`;
     }
